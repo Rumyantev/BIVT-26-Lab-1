@@ -73,7 +73,14 @@ namespace Lab1
             bool answer = false;
 
             // code here
+            double Limit;
+            if (x < 0)
+                Limit = 1 + x;
+            else
+                Limit = 1 - x;
 
+            if (y >= 0 && y <= Limit)
+                answer = true;
             // end
 
             return answer;
@@ -87,9 +94,6 @@ namespace Lab1
             if (n  <0) { answer = false; }
             else
                 if (n%2 == 0 ) { answer = false; }
-                    
-
-
 
                 // end
 
@@ -100,26 +104,12 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            double wake = 14*60;
-            double sleepstart = 4*60;
-            bool tea = true;
-            for (int day = 1; day < X; day++)
-            {
-                if (wake > 7*60) { wake = wake - 60; }
-                if (tea == true) { sleepstart = sleepstart - Y; }
-                if (tea == true)
-                { tea = false; }
-                else
-                { tea = true; }
-            }
-            double hoursofsleep = (wake - sleepstart);
-            bool wakeup = wake <= 7*60;
-            bool sleeptime = hoursofsleep >=7 && hoursofsleep<=9;
-            if ((wakeup == true) && (sleeptime == true)) { answer = true; }
 
-                // end
+            // end
 
-                return answer;
+            return answer;
         }
     }
 }
+
+
